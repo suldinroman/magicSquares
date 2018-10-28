@@ -11,10 +11,11 @@ public class Square
 	
 	Color color;
 	
-	public static int counter = 0;
+	public static int counter;
 	
 	public Square()
 	{
+		Square.counter = 0;
 		this.size = 20;
 		this.x = 0;
 		this.y = 0;
@@ -24,6 +25,7 @@ public class Square
 	
 	public Square(int x, int y, int size, Color color)
 	{
+		Square.counter = 0;
 		this.size = size;
 		this.x = x;
 		this.y = y;
