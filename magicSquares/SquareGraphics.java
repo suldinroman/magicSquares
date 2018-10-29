@@ -5,11 +5,11 @@ import javax.swing.*;
 
 public class SquareGraphics extends JComponent
 {	
-	Square[] sgSquare;
+	Square[] graphSquare;
 	
 	public SquareGraphics(Square[] ptrSquare)
 	{
-		sgSquare = ptrSquare;
+		graphSquare = ptrSquare;
 	}
 	
 	public void paintComponent(Graphics gSquare)
@@ -18,8 +18,8 @@ public class SquareGraphics extends JComponent
 		
 		for(int i = 0; i < Application.numSquares; ++i)
 		{
-			gSquare.setColor(sgSquare[i].getColor());	
-			gSquare.drawRect(sgSquare[i].getX(), sgSquare[i].getY(), sgSquare[i].getSize(), sgSquare[i].getSize());
+			gSquare.setColor(graphSquare[i].getColor());	
+			gSquare.drawRect(graphSquare[i].getX(), graphSquare[i].getY(), graphSquare[i].getSize(), graphSquare[i].getSize());
 		}
 		
 		super.repaint();

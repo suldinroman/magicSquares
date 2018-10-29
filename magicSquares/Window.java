@@ -1,14 +1,10 @@
 package magicSquares;
 
-import java.awt.Color;
-import java.awt.Graphics;
-import java.util.concurrent.TimeUnit;
-
 import javax.swing.*;
 
 public class Window extends JFrame
 {
-	SquareGraphics graphSquare;
+	SquareGraphics sgSquare;
 	
 	public Window(Square[] ptrSquares)
 	{
@@ -17,8 +13,8 @@ public class Window extends JFrame
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		graphSquare = new SquareGraphics(ptrSquares);
-		add(graphSquare);	
+		sgSquare = new SquareGraphics(ptrSquares);
+		add(sgSquare);	
 	}	
 }
 
