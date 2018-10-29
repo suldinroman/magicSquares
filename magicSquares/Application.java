@@ -22,10 +22,18 @@ public class Application
 		{
 			for(int i = 0; i < numSquares; ++i)
 			{
+				arrSquares[i].waySquare();
+				for(int j = 0; j < numSquares ; ++j)
+				{
+					if(i != j)
+					{
+						arrSquares[i].interSquare(arrSquares[j]);
+					}
+				}
 				//arrSquares[i].classSquareLogic();
 			}
 			
-			appPause(100);
+			appPause(75);
 		}
 	}
 	
