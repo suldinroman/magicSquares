@@ -11,20 +11,9 @@ public class Square
 	
 	Color color;
 	
-	public static int counter = 0;
-	
 	public Square()
 	{	
 		
-	}
-	
-	public Square(int x, int y, int size, Color color)
-	{
-		this.x = x;
-		this.y = y;
-		this.size = size;
-		this.color = color;
-		Square.counter++;
 	}
 
 	public int getSize()
@@ -67,9 +56,9 @@ public class Square
 		this.color = color;
 	}
 
-	public void classSquareLogic()
-	{
-		this.x++;
-		this.y++;
-	}
+//	public void classSquareLogic()
+//	{
+//		this.x++;
+//		this.y++;
+//	}
 }

@@ -5,25 +5,27 @@ import java.util.concurrent.TimeUnit;
 
 public class Application 
 {
+	public static int numSquares = 2;
+	
 	public static void main(String[] args) 
 	{
-		int numSquares = 2;
-		Square[] arrSquares = new Square[numSquares]; 
-		arrSquares[0] = new Square(0, 0, 50, Color.BLUE);
-		arrSquares[1] = new Square(40, 80, 90, Color.GREEN);
+
+		Square[] arrSquares = new Square[numSquares];
+		for(int i = 0; i < numSquares; ++i)
+				arrSquares[i] = new Square(); //arrSquares[i] = new Square(100*i, 10*i, 50, Color.GREEN);
+	
 		Window mainWindow = new Window(arrSquares);
 		
 		mainWindow.setVisible(true);
 		
 		for( ; ; )
 		{
-			//System.out.println("x[]= " + mainWindow.gSquare.getX() + ", getX= " + arrSquares.getX());
-			//System.out.println("y[]= " + mainWindow.gSquare.getY() + ", getY= " + arrSquares.getY());
+			for(int i = 0; i < numSquares; ++i)
+			{
+				//arrSquares[i].classSquareLogic();
+			}
 			
 			appPause(100);
-			
-			arrSquares[0].classSquareLogic();
-			arrSquares[1].classSquareLogic();
 		}
 	}
 	
