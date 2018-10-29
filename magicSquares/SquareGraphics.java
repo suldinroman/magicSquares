@@ -12,33 +12,36 @@ public class SquareGraphics extends JComponent
 	int size;
 	Color color;
 	
-	Square sgSquare;
+	Square[] sgSquare;
 	
 	public SquareGraphics()
 	{
 		
 	}
 	
-	public SquareGraphics(Square pSquare)
+	public SquareGraphics(Square[] pSquare)
 	{
 		sgSquare = pSquare;
 		
-		this.x = sgSquare.getX();
-		this.y = sgSquare.getY();		
-		this.size = sgSquare.getSize();
-		this.color = sgSquare.getColor();
+		//this.x = sgSquare.getX();
+		//this.y = sgSquare.getY();		
+		//this.size = sgSquare.getSize();
+		//this.color = sgSquare.getColor();
 	}
 	
 	public void paintComponent(Graphics gSquare)
 	{
 		super.paintComponents(gSquare);
 		
-		this.x = sgSquare.getX();
-		this.y = sgSquare.getY();
-		this.size = sgSquare.getSize();
+		//this.x = sgSquare.getX();
+		//this.y = sgSquare.getY();
+		//this.size = sgSquare.getSize();
 
-		gSquare.setColor(sgSquare.getColor());	
-		gSquare.drawRect(x, y, size, size);
+		gSquare.setColor(sgSquare[0].getColor());	
+		gSquare.drawRect(sgSquare[0].getX(), sgSquare[0].getY(), sgSquare[0].getSize(), sgSquare[0].getSize());
+		
+		gSquare.setColor(sgSquare[1].getColor());	
+		gSquare.drawRect(sgSquare[1].getX(), sgSquare[1].getY(), sgSquare[1].getSize(), sgSquare[1].getSize());
 			
 		super.repaint();
 	}

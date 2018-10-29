@@ -14,7 +14,7 @@ public class Window extends JFrame
 	{
 	}
 	
-	public Window(Square pSquares)
+	public Window(Square[] pSquares)
 	{
 		super("Magic Squares");
 		setBounds(0, 0, 800, 600);
@@ -22,14 +22,7 @@ public class Window extends JFrame
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		gSquare = new SquareGraphics(pSquares);
-		add(gSquare);
-		
-	}
-	
-	public void updateWindow(Square pSquares)
-	{
-		
-	}
-	
+		add(gSquare);	
+	}	
 }
 

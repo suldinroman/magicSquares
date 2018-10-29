@@ -7,19 +7,23 @@ public class Application
 {
 	public static void main(String[] args) 
 	{
-		Square arrSquares = new Square(0, 0, 50, Color.BLUE);
+		int numSquares = 2;
+		Square[] arrSquares = new Square[numSquares]; 
+		arrSquares[0] = new Square(0, 0, 50, Color.BLUE);
+		arrSquares[1] = new Square(40, 80, 90, Color.GREEN);
 		Window mainWindow = new Window(arrSquares);
 		
 		mainWindow.setVisible(true);
 		
 		for( ; ; )
 		{
-			System.out.println("x[]= " + mainWindow.gSquare.getX() + ", getX= " + arrSquares.getX());
-			System.out.println("y[]= " + mainWindow.gSquare.getY() + ", getY= " + arrSquares.getY());
+			//System.out.println("x[]= " + mainWindow.gSquare.getX() + ", getX= " + arrSquares.getX());
+			//System.out.println("y[]= " + mainWindow.gSquare.getY() + ", getY= " + arrSquares.getY());
 			
-			appPause(1000);
+			appPause(100);
 			
-			arrSquares.classSquareLogic();
+			arrSquares[0].classSquareLogic();
+			arrSquares[1].classSquareLogic();
 		}
 	}
 	
