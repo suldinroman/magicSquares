@@ -9,9 +9,10 @@ public class SquareGraphics extends JComponent
 {	
 	int x;
 	int y;
-	
 	int size;
 	Color color;
+	
+	Square sgSquare;
 	
 	public SquareGraphics()
 	{
@@ -20,28 +21,25 @@ public class SquareGraphics extends JComponent
 	
 	public SquareGraphics(Square pSquare)
 	{
-		this.x = pSquare.getX();
-		this.y = pSquare.getY();
+		sgSquare = pSquare;
 		
-		this.size = pSquare.getSize();
-		this.color = pSquare.getColor();
+		this.x = sgSquare.getX();
+		this.y = sgSquare.getY();		
+		this.size = sgSquare.getSize();
+		this.color = sgSquare.getColor();
 	}
 	
 	public void paintComponent(Graphics gSquare)
 	{
 		super.paintComponents(gSquare);
-		gSquare.setColor(color);	
+		
+		this.x = sgSquare.getX();
+		this.y = sgSquare.getY();
+		this.size = sgSquare.getSize();
+
+		gSquare.setColor(sgSquare.getColor());	
 		gSquare.drawRect(x, y, size, size);
-		
-		try
-		{
-			TimeUnit.MILLISECONDS.sleep(100);
-		} 
-		catch (InterruptedException e) 
-		{
-			e.printStackTrace();
-		}
-		
+			
 		super.repaint();
 	}
 	
@@ -70,7 +68,7 @@ public class SquareGraphics extends JComponent
 //	{
 //		return this.x;
 //	}
-
+//
 //	public int getY() 
 //	{
 //		return this.y;

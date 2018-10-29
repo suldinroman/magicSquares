@@ -15,18 +15,14 @@ public class Square
 	
 	public Square()
 	{	
-		this.size = 100;
-		this.x = 10;
-		this.y = 10;
-		this.color = Color.RED;
-		Square.counter++;
+		
 	}
 	
 	public Square(int x, int y, int size, Color color)
 	{
-		this.size = size;
 		this.x = x;
 		this.y = y;
+		this.size = size;
 		this.color = color;
 		Square.counter++;
 	}
@@ -46,7 +42,8 @@ public class Square
 		return y;
 	}
 	
-	public Color getColor() {
+	public Color getColor() 
+	{
 		return color;
 	}
 	
@@ -70,9 +67,9 @@ public class Square
 		this.color = color;
 	}
 
-//	public void classSquareLogic()
-//	{
-//		this.x++;
-//		this.y++;
-//	}
+	public void classSquareLogic()
+	{
+		this.x++;
+		this.y++;
+	}
 }

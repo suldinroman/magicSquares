@@ -1,32 +1,37 @@
 package magicSquares;
 
 import java.awt.Color;
+import java.util.concurrent.TimeUnit;
 
 public class Application 
 {
 	public static void main(String[] args) 
 	{
-		Square aSquares = new Square(80, 80, 50, Color.BLUE);
-		Window mainWindow = new Window(aSquares);
+		Square arrSquares = new Square(0, 0, 50, Color.BLUE);
+		Window mainWindow = new Window(arrSquares);
 		
 		mainWindow.setVisible(true);
-//		int numSquares = 3;
 		
-//		Square[] aSquares = new Square[numSquares];
-//		for(int i = 0; i < numSquares; ++i)
-//			aSquares[i] = new Square(20*i+10,5*i+10, 50, Color.BLACK);
-		
-		
-//		Window mainWindow = new Window(aSquares);
-		
-//		mainWindow.setVisible(true);
-//		for(int i = 0; ; ++i)
-//		{
-//			for(int j = 0; j < numSquares; ++j)
-//			{
-//				aSquares[j].classSquareLogic();
-//				mainWindow.updateWindow(j);
-//			}
-//		}
+		for( ; ; )
+		{
+			System.out.println("x[]= " + mainWindow.gSquare.getX() + ", getX= " + arrSquares.getX());
+			System.out.println("y[]= " + mainWindow.gSquare.getY() + ", getY= " + arrSquares.getY());
+			
+			appPause(1000);
+			
+			arrSquares.classSquareLogic();
+		}
+	}
+	
+	public static void appPause(int pauseTime)
+	{
+		try
+		{
+			TimeUnit.MILLISECONDS.sleep(pauseTime);
+		} 
+		catch (InterruptedException e) 
+		{
+			e.printStackTrace();
+		}
 	}
 }
