@@ -5,7 +5,7 @@ import java.util.concurrent.TimeUnit;
 
 public class Application 
 {
-	public static int numSquares = 2;
+	public static int numSquares = 4;
 	
 	public static void main(String[] args) 
 	{
@@ -23,6 +23,9 @@ public class Application
 			for(int i = 0; i < numSquares; ++i)
 			{
 				arrSquares[i].waySquare();
+			}
+			for(int i = 0; i < numSquares; ++i)
+			{
 				for(int j = 0; j < numSquares ; ++j)
 				{
 					if(i != j)
@@ -30,10 +33,9 @@ public class Application
 						arrSquares[i].interSquare(arrSquares[j]);
 					}
 				}
-				//arrSquares[i].classSquareLogic();
 			}
 			
-			appPause(75);
+			appPause(25);
 		}
 	}
 	

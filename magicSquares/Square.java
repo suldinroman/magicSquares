@@ -7,6 +7,8 @@ public class Square
 {
 	int size;
 	
+	int counter;
+	
 	int x;
 	int y;
 	
@@ -26,6 +28,7 @@ public class Square
 		this.x = random.nextInt(700 - this.size);
 		this.y = random.nextInt(500 - this.size);
 		this.countColor = random.nextInt(5);
+		this.counter = 0;
 	}
 	
 	public int getSize()
@@ -91,19 +94,21 @@ public class Square
 	{
 		if(this.x == squareTwo.x || this.x + this.size == squareTwo.x + squareTwo.size)
 		{
-			if((this.y < squareTwo.y && this.y > squareTwo.y+squareTwo.size) || (this.y + this.size < squareTwo.y && this.y + this.size > squareTwo.y+squareTwo.size));
+			if((this.y < squareTwo.y && this.y > squareTwo.y+squareTwo.size) || (this.y + this.size < squareTwo.y && this.y + this.size > squareTwo.y+squareTwo.size) && (counter % 2 == 1));
 			{
 				shiftColor();
 				changeSize();
 			}
+			++counter;
 		}
 		if(this.y == squareTwo.y || this.y + this.size == squareTwo.y + squareTwo.size)
 		{
-			if((this.x < squareTwo.x && this.x > squareTwo.x+squareTwo.size) || (this.x + this.size < squareTwo.x && this.x + this.size > squareTwo.x+squareTwo.size))
+			if((this.x < squareTwo.x && this.x > squareTwo.x+squareTwo.size) || (this.x + this.size < squareTwo.x && this.x + this.size > squareTwo.x+squareTwo.size) && (counter % 2 == 1))
 			{
 				shiftColor();
 				changeSize();
 			}
+			++counter;
 		}
 	}
 
@@ -112,26 +117,18 @@ public class Square
 		if(this.x + this.size >= 785)
 		{
 			this.wayX = false;
-			shiftColor();
-			changeSize();
 		}
 		if(this.x == 0)
 		{
 			this.wayX = true;
-			shiftColor();
-			changeSize();
 		}
 		if(this.y + this.size >= 560)
 		{
 			this.wayY = false;
-			shiftColor();
-			changeSize();
 		}
 		if(this.y == 0)
 		{
 			this.wayY = true;
-			shiftColor();
-			changeSize();
 		}
 		
 		if(this.wayX == true)
