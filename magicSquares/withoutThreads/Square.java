@@ -21,8 +21,8 @@ public class Square
 		this.wayY = random.nextBoolean();
 		
 		this.size = 50 + random.nextInt(150);
-		this.x = random.nextInt(791 - this.size);
-		this.y = random.nextInt(573 - this.size);
+		this.x = random.nextInt(700 - this.size);
+		this.y = random.nextInt(500 - this.size);
 		this.countColor = random.nextInt(5);
 	}
 	
